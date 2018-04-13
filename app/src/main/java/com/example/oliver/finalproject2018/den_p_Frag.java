@@ -50,18 +50,11 @@ public class den_p_Frag extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_den_patient,container,false);
-
-
-
-
     }
     public void onViewCreated(View view, Bundle savedInstanceState) {
         // Setup any handles to view objects here
@@ -74,6 +67,12 @@ public class den_p_Frag extends Fragment {
         den_birth=getView().findViewById(R.id.den_pat_birthday);
         den_hCard=getView().findViewById(R.id.den_pat_health_number);
         den_phone=getView().findViewById(R.id.den_pat_phone_number);
+
+        br_yes=getView().findViewById(R.id.den_yes_braces);
+        br_no=getView().findViewById(R.id.den_no_braces);
+        hl_yes=getView().findViewById(R.id.den_yes_hbenefit);
+        hl_no=getView().findViewById(R.id.den_no_hbenefit);
+
 
         Button Sub_btn=getView().findViewById(R.id.den_submit);
 
@@ -91,6 +90,12 @@ public class den_p_Frag extends Fragment {
                 cv.put(PatientDatabaseHelper.COLUMN_DESCRIPTION,den_descri.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_HEALTH_CARD,den_hCard.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_PHONE,den_phone.getText().toString());
+
+                if(br_yes.isSelected()) cv.put(PatientDatabaseHelper.COLUMN_BRACES,"Yes");
+                else cv.put(PatientDatabaseHelper.COLUMN_BRACES,"No");
+
+                if(hl_yes.isSelected()) cv.put(PatientDatabaseHelper.COLUMN_HEALTH_BENFIT,"Yes");
+                cv.put(PatientDatabaseHelper.COLUMN_HEALTH_BENFIT,"No");
 
 
                 db.insert(PatientDatabaseHelper.TABLE_DEN_PATIENT,null,cv);

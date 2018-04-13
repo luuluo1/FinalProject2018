@@ -9,7 +9,7 @@ import java.util.Date;
 public class Patient {
     private String name;
     private String address;
-    private Date birthday;
+    private String birthday;
     private String phoneNumber;
     private String HealthCard;
     private String Description ;
@@ -18,7 +18,7 @@ public class Patient {
 
     }
 
-    public Patient(String name, String address, Date birthday, String phoneNumber, String healthCard, String description) {
+    public Patient(String name, String address, String birthday, String phoneNumber, String healthCard, String description) {
         this.name = name;
         this.address = address;
         this.birthday = birthday;
@@ -35,7 +35,7 @@ public class Patient {
         this.address = address;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -59,7 +59,7 @@ public class Patient {
         return address;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 

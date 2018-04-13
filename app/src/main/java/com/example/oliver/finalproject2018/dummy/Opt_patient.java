@@ -9,20 +9,20 @@ import java.util.Date;
 public class Opt_patient extends Patient{
 
 
-    private Date glassesBought;
+    private String glassesBought;
     private String glassesStore;
 
     public Opt_patient() {
 
     }
 
-    public Opt_patient(Date glassesBought, String glassesStore) {
+    public Opt_patient(String glassesBought, String glassesStore) {
 
         this.glassesBought = glassesBought;
         this.glassesStore = glassesStore;
     }
 
-    public void setGlassesBought(Date glassesBought) {
+    public void setGlassesBought(String glassesBought) {
         this.glassesBought = glassesBought;
     }
 
@@ -30,7 +30,7 @@ public class Opt_patient extends Patient{
         this.glassesStore = glassesStore;
     }
 
-    public Date getGlassesBought() {
+    public String getGlassesBought() {
         return glassesBought;
     }
 

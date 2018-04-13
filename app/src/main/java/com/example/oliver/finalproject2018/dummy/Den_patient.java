@@ -10,26 +10,25 @@ public class Den_patient {
 
     private String name;
     private String address;
-    private Date birthday;
+    private String birthday;
     private String phoneNumber;
     private String HealthCard;
     private String Description ;
-
-    private boolean Benifits;
-    private boolean hadBraces;
+    private String Benifits;
+    private String hadBraces;
 
     public Den_patient() {
 
     }
 
-    public Den_patient(String name, String address, Date birthday, String phoneNumber, String healthCard, String description, boolean benifits, boolean hadBraces) {
+    public Den_patient(String name, String address, String birthday, String phoneNumber, String healthCard, String description, String benifits, String hadBraces) {
         this.name = name;
         this.address = address;
         this.birthday = birthday;
         this.phoneNumber = phoneNumber;
-        HealthCard = healthCard;
-        Description = description;
-        Benifits = benifits;
+        this.HealthCard = healthCard;
+       this.Description = description;
+        this.Benifits = benifits;
         this.hadBraces = hadBraces;
     }
 
@@ -41,7 +40,7 @@ public class Den_patient {
         this.address = address;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -57,11 +56,11 @@ public class Den_patient {
         Description = description;
     }
 
-    public void setBenifits(boolean benifits) {
+    public void setBenifits(String benifits) {
         Benifits = benifits;
     }
 
-    public void setHadBraces(boolean hadBraces) {
+    public void setHadBraces(String hadBraces) {
         this.hadBraces = hadBraces;
     }
 
@@ -73,7 +72,7 @@ public class Den_patient {
         return address;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
@@ -89,11 +88,11 @@ public class Den_patient {
         return Description;
     }
 
-    public boolean isBenifits() {
+    public String isBenifits() {
         return Benifits;
     }
 
-    public boolean isHadBraces() {
+    public String isHadBraces() {
         return hadBraces;
     }
 }
