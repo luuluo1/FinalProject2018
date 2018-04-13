@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -143,10 +144,28 @@ public class pif_doc_patientlist extends AppCompatActivity {
             String name = cursor.getString(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_NAME));
 
             TextView pat_ID = view.findViewById(R.id.Item_view_ID);
-            int id = cursor.getInt(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_PATIENT_ID));
+           final int id = cursor.getInt(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_PATIENT_ID));
 
             pat_name.setText(name);
             pat_ID.setText(String.valueOf(id));
+
+            Button update_btn=view.findViewById(R.id.Update_buttton);
+            Button delete_btn=view.findViewById(R.id.Delete_button);
+
+            update_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //     Intent i1=new Intent(getApplicationContext(), )
+                }
+            });
+            delete_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    db.delete(PatientDatabaseHelper.TABLE_DOC_PATIENT,PatientDatabaseHelper.COLUMN_DOC_PATIENT_ID+"="+id,null);
+                    notifyDataSetChanged();
+
+                }
+            });
         }
 
 

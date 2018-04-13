@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -60,6 +61,7 @@ public class pif_opt_patientList extends AppCompatActivity {
 
         opt_list.setAdapter(pa);
         pa.changeCursor(cursor);
+        pa.notifyDataSetChanged();
 
 
 
@@ -125,17 +127,33 @@ public class pif_opt_patientList extends AppCompatActivity {
             String name = cursor.getString(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_NAME));
 
             TextView pat_ID = view.findViewById(R.id.Item_view_ID);
-            int id = cursor.getInt(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_PATIENT_ID));
+         final   int id = cursor.getInt(cursor.getColumnIndex(PatientDatabaseHelper.COLUMN_OPT_PATIENT_ID));
 
             pat_name.setText(name);
             pat_ID.setText(String.valueOf(id));
+
+
+            Button update_btn=view.findViewById(R.id.Update_buttton);
+            Button delete_btn=view.findViewById(R.id.Delete_button);
+
+            update_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+               //     Intent i1=new Intent(getApplicationContext(), )
+                }
+            });
+            delete_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    db.delete(PatientDatabaseHelper.TABLE_OPT_PATIENT,PatientDatabaseHelper.COLUMN_OPT_PATIENT_ID+"="+id,null);
+                    notifyDataSetChanged();
+
+                }
+            });
+
+
+
+
         }
-
-
     }
-
-
-
-
-
 }
