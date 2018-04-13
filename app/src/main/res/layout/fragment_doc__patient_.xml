@@ -21,7 +21,6 @@
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:textSize="17sp"
-
         />
 
     <TextView
@@ -101,7 +100,7 @@
         android:id="@+id/doc_pat_previous_surg"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:textSize="40dp"
+        android:textSize="17sp"
         />
     <TextView
         android:id="@+id/textView8"

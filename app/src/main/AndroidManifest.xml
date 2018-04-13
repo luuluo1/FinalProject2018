@@ -32,7 +32,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".add_den_p" />
         <activity android:name=".add_doc_p" />
-        <activity android:name=".add_opt_p"></activity>
+        <activity android:name=".add_opt_p" />
+        <activity android:name=".opt_view_tiem"></activity>
     </application>
 
 </manifest>

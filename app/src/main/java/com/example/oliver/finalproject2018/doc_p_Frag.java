@@ -24,14 +24,14 @@ import java.util.List;
 public class doc_p_Frag extends Fragment    {
 
     public static final String TAG="AddDocPatient";
-    private EditText dTxtName;
-    private EditText dTxtAddress;
-    private EditText dTxtBirth;
-    private EditText dTxtPhone;
-    private EditText dTxtHCard;
-    private EditText dDescr;
-    private EditText dPre;
-    private EditText dAllergy;
+     EditText dTxtName;
+     EditText dTxtAddress;
+     EditText dTxtBirth;
+     EditText dTxtPhone;
+     EditText dTxtHCard;
+     EditText dDescr;
+     EditText dPre;
+     EditText dAllergy;
 
     private Doc_patientDao doc_patientDao;
 
@@ -55,31 +55,29 @@ public class doc_p_Frag extends Fragment    {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        dTxtName=getView().findViewById(R.id.doc_pat_name);
-        dDescr=getView().findViewById(R.id.doc_pat_description);
-        dAllergy=getView().findViewById(R.id.doc_pat_allergies);
-        dTxtAddress=getView().findViewById(R.id.doc_pat_address);
-        dTxtBirth=getView().findViewById(R.id.doc_pat_birthday);
-        dPre=getView().findViewById(R.id.doc_pat_previous_surg);
-        dTxtPhone=getView().findViewById(R.id.doc_pat_phone_number);
-        dTxtHCard=getView().findViewById(R.id.doc_pat_health_number);
-
-
-
-
 
         Button sub_btn=getView().findViewById(R.id.doc_submit);
         sub_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                dTxtName=getView().findViewById(R.id.doc_pat_name);
+                dDescr=getView().findViewById(R.id.doc_pat_description);
+                dAllergy=getView().findViewById(R.id.doc_pat_allergies);
+                dTxtAddress=getView().findViewById(R.id.doc_pat_address);
+                dTxtBirth=getView().findViewById(R.id.doc_pat_birthday);
+                dPre=getView().findViewById(R.id.doc_pat_previous_surg);
+                dTxtPhone=getView().findViewById(R.id.doc_pat_phone_number);
+                dTxtHCard=getView().findViewById(R.id.doc_pat_health_number);
+
                 PatientDatabaseHelper pd=new PatientDatabaseHelper(getContext());
                 SQLiteDatabase db=pd.getWritableDatabase();
 
                 ContentValues cv=new ContentValues();
 
+                cv.put(PatientDatabaseHelper.COLUMN_DOC_NAME,dTxtName.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_PHONE,dTxtPhone.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_DESCRIPTION,dDescr.getText().toString());
-                cv.put(PatientDatabaseHelper.COLUMN_NAME,dTxtName.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_HEALTH_CARD,dTxtHCard.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_ALERGIES,dAllergy.getText().toString());
                 cv.put(PatientDatabaseHelper.COLUMN_SURGERIES,dPre.getText().toString());

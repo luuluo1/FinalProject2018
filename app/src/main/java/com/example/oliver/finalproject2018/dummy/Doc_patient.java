@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by oliver on 4/11/2018.
  */
 
-public class Doc_patient implements Serializable{
+public class Doc_patient extends Patient implements Serializable{
     public static final String TAG="Doc_patient";
     public static final long serialVersionUID=7406082437623008161L;
 

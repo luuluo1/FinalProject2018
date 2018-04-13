@@ -43,7 +43,7 @@
         android:textAppearance="?android:attr/textAppearance"
         android:textColor="@android:color/darker_gray"
         android:visibility="gone" />
-
+    <ScrollView>
     <ListView
         android:id="@+id/list_opt_patients"
         android:layout_width="304dp"
@@ -55,6 +55,5 @@
         android:divider="@android:drawable/divider_horizontal_bright"
         android:dividerHeight="0.5dp"
         android:listSelector="@android:drawable/list_selector_background" />
-
-
+</ScrollView>
 </GridLayout>

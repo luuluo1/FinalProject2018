@@ -13,9 +13,17 @@ public class Patient {
     private String phoneNumber;
     private String HealthCard;
     private String Description ;
-
+    private int ID;
     public Patient() {
 
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public Patient(String name, String address, String birthday, String phoneNumber, String healthCard, String description) {
@@ -25,6 +33,7 @@ public class Patient {
         this.phoneNumber = phoneNumber;
         HealthCard = healthCard;
         Description = description;
+
     }
 
     public void setName(String name) {

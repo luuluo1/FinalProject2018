@@ -11,7 +11,7 @@ public class Opt_patient extends Patient{
 
     private String glassesBought;
     private String glassesStore;
-
+    private int ID;
     public Opt_patient() {
 
     }
@@ -20,6 +20,14 @@ public class Opt_patient extends Patient{
 
         this.glassesBought = glassesBought;
         this.glassesStore = glassesStore;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     public void setGlassesBought(String glassesBought) {

@@ -47,6 +47,7 @@
 
     <string name="den_yes_healthb">"Yes"</string>
     <string name="den_no_healthb">"No"</string>
-
+    <string name="Update">"Update"</string>
+    <string name="delete">"Delete"</string>
 
 </resources>
